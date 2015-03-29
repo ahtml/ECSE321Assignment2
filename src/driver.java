@@ -7,6 +7,7 @@ public class driver {
 	}
 	
 	public static void observing(){
+		int critterID = 0;
 		Map myMap = Map.getInstance();
 		myMap.setMap(5, 5);
 		System.out.println("Made subject");
@@ -36,6 +37,19 @@ public class driver {
 				Thread.sleep(1000);
 				myMap.placeTower(towerList[i]);
 				myMap.notifyObservers();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		Critter c1 = new Critter(myMap.temp, critterID);
+		myMap.addCritter(c1);
+		
+		for(int i=0;i<pathList.length;i++){
+			try {
+				Thread.sleep(1000);
+				myMap.moveCritters();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
