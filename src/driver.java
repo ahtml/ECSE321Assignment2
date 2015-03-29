@@ -29,6 +29,19 @@ public class driver {
 		myMap.finalizePath();
 		myMap.notifyObservers();
 		
+		int towerList [] = {10, 20, 15, 9};
 		
+		for(int i=0;i<towerList.length;i++){
+			try {
+				Thread.sleep(1000);
+				myMap.placeTower(towerList[i]);
+				myMap.notifyObservers();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		System.out.println("DONE!");
 	}
 }
