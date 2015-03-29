@@ -426,6 +426,8 @@ public class Map extends Subject {
 		}
 	}
 	
+	// Methods below this are the new methods created particularly for assignment 2
+	
 	/**
 	 * New method created by me to place tower on the scenery from Map
 	 * @param towerPos
