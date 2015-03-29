@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 
 
-public class Map {
+public class Map extends Subject {
 	
 	private static Tile grid [][]; // hold the Map path and scenery
 	private int height; // height of map
@@ -423,5 +423,18 @@ public class Map {
 		default:
 			return PathType.noDirection;//error
 		}
-	}	
+	}
+	
+	/**
+	 * New method created by me to place tower on the scenery from Map
+	 * @param towerPos
+	 */
+	public void placeTower(int towerPos){
+		Scenery tempScenery;
+		if(getGrid(towerPos/width, towerPos%width).isScenery()){
+			tempScenery = (Scenery) grid[towerPos/width][towerPos%width];
+			tempScenery.towerPlaced();
+		}
+		
+	}
 }
