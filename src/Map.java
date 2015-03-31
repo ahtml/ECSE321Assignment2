@@ -17,7 +17,7 @@ public class Map extends Subject {
 	
 	//private
 	static LinkedList <Path> temp = new LinkedList<Path>(); // List of the Path
-	private LinkedList <Critter> critters = new LinkedList<Critter>(); // List of critters
+	public LinkedList <Critter> critters = new LinkedList<Critter>(); // List of critters
 	private Path entryPoint; // Entry point
 	private Path exitPoint; // Exit point
 	
